@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ClAMiszIoNS0owrKWHxRLiVBi+2PM55vajaXHLP7UitS24h2A1kjzC33wZOde7YldUlxTtCJ37Qh57QjNOwjiQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.5\\microsoft.aspnetcore.authorization.3.1.5.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.aspnetcore.metadata\\3.1.5\\microsoft.aspnetcore.metadata.3.1.5.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.5\\microsoft.extensions.dependencyinjection.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.5\\microsoft.extensions.logging.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.extensions.options\\3.1.5\\microsoft.extensions.options.3.1.5.nupkg.sha512",
+    "C:\\Users\\vadim\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.5\\microsoft.extensions.primitives.3.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
