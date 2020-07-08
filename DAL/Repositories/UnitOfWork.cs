@@ -9,6 +9,19 @@ namespace DAL.Repositories
         private readonly AppContext _appContext;
 
         private IRepository<User> _userRepo;
+        private IRepository<Role> _roleRepo;
+        private IRepository<Category> _categoryRepo;
+        private IRepository<CategoryItems> _catItemsRepo;
+        private IRepository<Item> _itemRepo;
+        private IRepository<Image> _imageRepo;
+        private IRepository<ImagesItem> _imgItemRpo;
+        private IRepository<Shipping> _shippingRepo;
+        private IRepository<Order> _orderRepo;
+        private IRepository<BellingAndShippInfo> _bellingAndShippInfoRepo;
+        private IRepository<OrderDetails> _orderDetailsRepo;
+
+
+
 
         public UnitOfWork(AppContext appContext)
         {
@@ -25,11 +38,119 @@ namespace DAL.Repositories
                 return _userRepo;
             } 
         }
-            
 
-        public async Task<int> Save()
+        public IRepository<Role> RoleRepo
         {
-            return await _appContext.SaveChangesAsync();
+            get
+            {
+                if (_roleRepo == null)
+                    _roleRepo = new Repository<Role>(_appContext);
+
+                return _roleRepo;
+            }
         }
+
+        public IRepository<Category> CategoryRepo
+        {
+            get
+            {
+                if (_categoryRepo == null)
+                    _categoryRepo = new Repository<Category>(_appContext);
+
+                return _categoryRepo;
+            }
+        }
+
+
+        public IRepository<CategoryItems> CatItemsRepo
+        {
+            get
+            {
+                if (_catItemsRepo == null)
+                    _catItemsRepo = new Repository<CategoryItems>(_appContext);
+
+                return _catItemsRepo;
+            }
+        }
+
+        public IRepository<Item> ItemRepo
+        {
+            get
+            {
+                if (_itemRepo == null)
+                    _itemRepo = new Repository<Item>(_appContext);
+
+                return _itemRepo;
+            }
+        }
+
+        public IRepository<Image> ImageRepo
+        {
+            get
+            {
+                if (_imageRepo == null)
+                    _imageRepo = new Repository<Image>(_appContext);
+
+                return _imageRepo;
+            }
+        }
+
+        public IRepository<ImagesItem> ImgItemRpo
+        {
+            get
+            {
+                if (_imgItemRpo == null)
+                    _imgItemRpo = new Repository<ImagesItem>(_appContext);
+
+                return _imgItemRpo;
+            }
+        }
+
+        public IRepository<Shipping> ShippingRepo
+        {
+            get
+            {
+                if (_shippingRepo == null)
+                    _shippingRepo = new Repository<Shipping>(_appContext);
+
+                return _shippingRepo;
+            }
+        }
+
+        public IRepository<Order> OrderRepo
+        {
+            get
+            {
+                if (_orderRepo == null)
+                    _orderRepo = new Repository<Order>(_appContext);
+
+                return _orderRepo;
+            }
+        }
+
+        public IRepository<BellingAndShippInfo> BellingAndShippInfoRepo
+        {
+            get
+            {
+                if (_bellingAndShippInfoRepo == null)
+                    _bellingAndShippInfoRepo = new Repository<BellingAndShippInfo>(_appContext);
+
+                return _bellingAndShippInfoRepo;
+            }
+        }
+
+        public IRepository<OrderDetails> OrderDetailsRepo
+        {
+            get
+            {
+                if (_orderDetailsRepo == null)
+                    _orderDetailsRepo = new Repository<OrderDetails>(_appContext);
+
+                return _orderDetailsRepo;
+            }
+        }
+
     }
-}
+
+   }
+

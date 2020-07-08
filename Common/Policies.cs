@@ -9,6 +9,8 @@ namespace Common
     {
         public const string Admin = "Admin";
         public const string User = "User";
+        public const string Guest = "User";
+
         public static AuthorizationPolicy AdminPolicy()
         {
             return new AuthorizationPolicyBuilder().RequireAuthenticatedUser().RequireRole(Admin).Build();

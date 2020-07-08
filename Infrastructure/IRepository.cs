@@ -11,6 +11,7 @@ namespace Infrastructure
         T Add(T t);
         Task<T> AddAsyn(T t);
         int Count();
+        IQueryable<T> IncludeMultiple(Func<IQueryable<T>, IQueryable<T>> includeMembers);
         Task<int> CountAsync();
         void Delete(T entity);
         Task<int> DeleteAsyn(T entity);

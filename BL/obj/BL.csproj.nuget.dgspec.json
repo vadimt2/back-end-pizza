@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\BL\\BL.csproj": {}
+    "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\BL\\BL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\BL\\BL.csproj": {
+    "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\BL\\BL.csproj",
+        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\BL\\BL.csproj",
         "projectName": "BL",
-        "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\BL\\BL.csproj",
+        "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\BL\\BL.csproj",
         "packagesPath": "C:\\Users\\vadim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\BL\\obj\\",
+        "outputPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\BL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vadim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,14 +27,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj"
+              "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj"
               },
-              "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\DAL\\DAL.csproj"
+              "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj": {
+    "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj",
+        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj",
+        "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\vadim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\obj\\",
+        "outputPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vadim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -134,14 +134,14 @@
         }
       }
     },
-    "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\DAL\\DAL.csproj": {
+    "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\vadim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vadim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -157,11 +157,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj"
+              "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj"
               },
-              "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -219,14 +219,14 @@
         }
       }
     },
-    "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\vadim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vadim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -242,8 +242,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Common\\Common.csproj"
+              "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Common\\Common.csproj"
               }
             }
           }

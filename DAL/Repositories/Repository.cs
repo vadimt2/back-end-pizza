@@ -158,6 +158,17 @@ namespace DAL.Repositories
             return queryable;
         }
 
+
+
+        public IQueryable<T> IncludeMultiple(Func<IQueryable<T>, IQueryable<T>> includeMembers)
+        {
+            DbSet<T> set = _context.Set<T>();
+            IQueryable<T> result = includeMembers(set);
+
+            return result;
+        }
+
+
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {

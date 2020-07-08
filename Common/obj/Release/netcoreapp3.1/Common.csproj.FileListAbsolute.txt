@@ -1,0 +1,9 @@
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\bin\Release\netcoreapp3.1\Common.deps.json
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\bin\Release\netcoreapp3.1\Common.dll
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\bin\Release\netcoreapp3.1\Common.pdb
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\obj\Release\netcoreapp3.1\Common.csprojAssemblyReference.cache
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\obj\Release\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\obj\Release\netcoreapp3.1\Common.AssemblyInfo.cs
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\obj\Release\netcoreapp3.1\Common.csproj.CoreCompileInputs.cache
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\obj\Release\netcoreapp3.1\Common.dll
+C:\Users\vadim\source\repos\PizzaWebAPI\Common\obj\Release\netcoreapp3.1\Common.pdb

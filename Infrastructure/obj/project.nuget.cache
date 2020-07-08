@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ClAMiszIoNS0owrKWHxRLiVBi+2PM55vajaXHLP7UitS24h2A1kjzC33wZOde7YldUlxTtCJ37Qh57QjNOwjiQ==",
+  "dgSpecHash": "gcmjXfiM3b9zYlrhxI/KDSWHXFUTzLmLXtzz6MOEdPFh1GXLyTlR6fs2O1Z5svhTG65KDJjV2vBR7aAWInOp5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vadim\\source\\repos\\WebApiJwtProj1\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\vadim\\source\\repos\\PizzaWebAPI\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vadim\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.5\\microsoft.aspnetcore.authorization.3.1.5.nupkg.sha512",
     "C:\\Users\\vadim\\.nuget\\packages\\microsoft.aspnetcore.metadata\\3.1.5\\microsoft.aspnetcore.metadata.3.1.5.nupkg.sha512",

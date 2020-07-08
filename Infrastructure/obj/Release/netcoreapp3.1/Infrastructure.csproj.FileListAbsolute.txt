@@ -1,0 +1,12 @@
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\bin\Release\netcoreapp3.1\Infrastructure.deps.json
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\bin\Release\netcoreapp3.1\Infrastructure.dll
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\bin\Release\netcoreapp3.1\Infrastructure.pdb
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\bin\Release\netcoreapp3.1\Common.dll
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\bin\Release\netcoreapp3.1\Common.pdb
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\obj\Release\netcoreapp3.1\Infrastructure.csprojAssemblyReference.cache
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\obj\Release\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\obj\Release\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\obj\Release\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\obj\Release\netcoreapp3.1\Infrastructure.csproj.CopyComplete
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\obj\Release\netcoreapp3.1\Infrastructure.dll
+C:\Users\vadim\source\repos\PizzaWebAPI\Infrastructure\obj\Release\netcoreapp3.1\Infrastructure.pdb

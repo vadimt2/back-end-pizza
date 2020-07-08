@@ -7,6 +7,28 @@ namespace Infrastructure
     {
         IRepository<User> UserRepo { get;  }
 
-        Task<int> Save();
+        IRepository<Role> RoleRepo { get; }
+
+        IRepository<Category> CategoryRepo { get; }
+
+        IRepository<CategoryItems> CatItemsRepo { get; }
+
+        IRepository<Item> ItemRepo { get; }
+
+        IRepository<Image> ImageRepo { get; }
+
+        IRepository<ImagesItem> ImgItemRpo{ get; }
+
+        IRepository<Shipping> ShippingRepo { get; }
+
+        IRepository<Order> OrderRepo { get; }
+
+        IRepository<BellingAndShippInfo> BellingAndShippInfoRepo { get; }
+
+        IRepository<OrderDetails> OrderDetailsRepo { get; }
+
+
+
+
     }
 }

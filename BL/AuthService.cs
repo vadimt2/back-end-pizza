@@ -18,7 +18,7 @@ namespace BL
         {
             try
             {
-                var user = await _unitOfWork.UserRepo.FindAsync(user => user.Email == email);
+                var user = await _unitOfWork.UserRepo.FindAsync(user => user.Email == email && user.IsRegistered);
                 if (user == null)
                     return null;
 
@@ -61,7 +61,8 @@ namespace BL
         {
             try
             {
-                bool userExists = await UserExists(user.Email);
+                bool userExists = await UserRegistered(user.Email);
+
                 if (userExists)
                     return null;
 
@@ -72,9 +73,10 @@ namespace BL
                 user.PasswordHash = passwordHash;
                 user.PasswordSalt = passwordSalt;
                 user.Password = Convert.ToBase64String(passwordHash);
+                user.IsRegistered = true;
+                user.RoleId = 1;
 
                 await _unitOfWork.UserRepo.AddAsyn(user);
-                await _unitOfWork.Save();
 
                 return user;
             }
@@ -97,7 +99,12 @@ namespace BL
         public async Task<bool> UserExists(string email)
         {
             var user = await _unitOfWork.UserRepo.FindAsync(user => user.Email == email);
+            return user != null;
+        }
 
+        public async Task<bool> UserRegistered(string email)
+        {
+            var user = await _unitOfWork.UserRepo.FindAsync(user => user.Email == email && user.IsRegistered);
             return user != null;
         }
     }
