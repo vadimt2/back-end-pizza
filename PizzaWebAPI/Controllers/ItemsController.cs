@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Common;
 using Infrastructure;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,6 +46,9 @@ namespace PizzaWebAPI.Controllers
         {
             try
             {
+                if (item.Images.Count < 1)
+                    return BadRequest("add more images");
+
                 if (item.Title == null)
                     return BadRequest("Please inseret name");
 

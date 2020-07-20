@@ -19,7 +19,7 @@ namespace BL
             try
             {
                 var user = await _unitOfWork.UserRepo.FindAsync(user => user.Email == email && user.IsRegistered);
-                if (user == null)
+                if (user == null || !user.IsRegistered)
                     return null;
 
                 if (!VerifyPassword(password, user.PasswordHash, user.PasswordSalt))

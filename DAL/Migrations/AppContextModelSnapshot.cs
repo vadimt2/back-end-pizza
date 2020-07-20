@@ -207,14 +207,14 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ImageData")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsUrl")
+                        .HasColumnType("bit");
+
                     b.Property<int>("ItemId")
                         .HasColumnType("int");
-
-                    b.Property<byte[]>("UploadedImage")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -226,56 +226,65 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            ItemId = 1,
-                            Url = "http://st1.foodsd.co.il/Images/Recipes/xxl/Recipe-5968-7g0fXYdnVNi1LZ7N.jpg"
+                            ImageData = "http://st1.foodsd.co.il/Images/Recipes/xxl/Recipe-5968-7g0fXYdnVNi1LZ7N.jpg",
+                            IsUrl = true,
+                            ItemId = 1
                         },
                         new
                         {
                             Id = 2,
-                            ItemId = 2,
-                            Url = "https://media.metrolatam.com/2020/04/23/pizza14429461280-26168c22f83af34d20770970db28bb7b-1200x0.jpg"
+                            ImageData = "https://media.metrolatam.com/2020/04/23/pizza14429461280-26168c22f83af34d20770970db28bb7b-1200x0.jpg",
+                            IsUrl = true,
+                            ItemId = 2
                         },
                         new
                         {
                             Id = 3,
-                            ItemId = 3,
-                            Url = "https://www.dominos.com.au/ManagedAssets/AU/product/P005/AU_P005_en_hero_4055.jpg"
+                            ImageData = "https://www.dominos.com.au/ManagedAssets/AU/product/P005/AU_P005_en_hero_4055.jpg",
+                            IsUrl = true,
+                            ItemId = 3
                         },
                         new
                         {
                             Id = 4,
-                            ItemId = 4,
-                            Url = "https://www.dominos.com.au/ManagedAssets/AU/product/P356/AU_P356_en_hero_4055.jpg"
+                            ImageData = "https://www.dominos.com.au/ManagedAssets/AU/product/P356/AU_P356_en_hero_4055.jpg",
+                            IsUrl = true,
+                            ItemId = 4
                         },
                         new
                         {
                             Id = 5,
-                            ItemId = 5,
-                            Url = "https://i.insider.com/5cf6d1ef11e2054bb76400b4?width=1100&format=jpeg&auto=webp"
+                            ImageData = "https://i.insider.com/5cf6d1ef11e2054bb76400b4?width=1100&format=jpeg&auto=webp",
+                            IsUrl = true,
+                            ItemId = 5
                         },
                         new
                         {
                             Id = 6,
-                            ItemId = 6,
-                            Url = "https://d1725r39asqzt3.cloudfront.net/9858a18d-613d-4d14-ad4d-bc87e000df9e/orig.jpg"
+                            ImageData = "https://d1725r39asqzt3.cloudfront.net/9858a18d-613d-4d14-ad4d-bc87e000df9e/orig.jpg",
+                            IsUrl = true,
+                            ItemId = 6
                         },
                         new
                         {
                             Id = 7,
-                            ItemId = 7,
-                            Url = "https://www.sirpizzatn.com/wp-content/uploads/2017/09/RoyalFeast.jpg"
+                            ImageData = "https://www.sirpizzatn.com/wp-content/uploads/2017/09/RoyalFeast.jpg",
+                            IsUrl = true,
+                            ItemId = 7
                         },
                         new
                         {
                             Id = 8,
-                            ItemId = 8,
-                            Url = "https://images.squarespace-cdn.com/content/v1/53816030e4b0135aba1a2100/1454031327479-S1VJTYG878E9W09KM9DM/ke17ZwdGBToddI8pDm48kGdXwE-vebEpgb33VwdtsTxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyFXBTrd8RtdLuD2xTt52BcbibHP9HAWTuiNyjdIhZkDRmM2LuhCrpPu_cqK6msTYI/PizzaHut_TargetMenuBoards_MR-002.jpg"
+                            ImageData = "https://images.squarespace-cdn.com/content/v1/53816030e4b0135aba1a2100/1454031327479-S1VJTYG878E9W09KM9DM/ke17ZwdGBToddI8pDm48kGdXwE-vebEpgb33VwdtsTxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyFXBTrd8RtdLuD2xTt52BcbibHP9HAWTuiNyjdIhZkDRmM2LuhCrpPu_cqK6msTYI/PizzaHut_TargetMenuBoards_MR-002.jpg",
+                            IsUrl = true,
+                            ItemId = 8
                         },
                         new
                         {
                             Id = 9,
-                            ItemId = 9,
-                            Url = "https://cdn.shopify.com/s/files/1/1335/2603/products/Coca-cola_regular_1024x1024.jpg"
+                            ImageData = "https://cdn.shopify.com/s/files/1/1335/2603/products/Coca-cola_regular_1024x1024.jpg",
+                            IsUrl = true,
+                            ItemId = 9
                         });
                 });
 
@@ -410,11 +419,20 @@ namespace DAL.Migrations
                     b.Property<Guid>("ConfirmationNumber")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("CurrencyString")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float?>("CurrencyValue")
+                        .HasColumnType("real");
+
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("ShippingCost")
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<int>("ShippingId")
                         .HasColumnType("int");

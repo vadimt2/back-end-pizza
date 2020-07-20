@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class init : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -107,8 +107,8 @@ namespace DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Url = table.Column<string>(nullable: true),
-                    UploadedImage = table.Column<byte[]>(nullable: true),
+                    ImageData = table.Column<string>(nullable: true),
+                    IsUrl = table.Column<bool>(nullable: false),
                     ItemId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -159,6 +159,9 @@ namespace DAL.Migrations
                     ShippingId = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false),
                     ConfirmationNumber = table.Column<Guid>(nullable: false),
+                    CurrencyString = table.Column<string>(nullable: true),
+                    CurrencyValue = table.Column<float>(nullable: true),
+                    ShippingCost = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
                     Total = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
                     Note = table.Column<string>(nullable: true),
                     Tax = table.Column<float>(nullable: false)
@@ -304,18 +307,18 @@ namespace DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Images",
-                columns: new[] { "Id", "ItemId", "UploadedImage", "Url" },
+                columns: new[] { "Id", "ImageData", "IsUrl", "ItemId" },
                 values: new object[,]
                 {
-                    { 4, 4, null, "https://www.dominos.com.au/ManagedAssets/AU/product/P356/AU_P356_en_hero_4055.jpg" },
-                    { 5, 5, null, "https://i.insider.com/5cf6d1ef11e2054bb76400b4?width=1100&format=jpeg&auto=webp" },
-                    { 2, 2, null, "https://media.metrolatam.com/2020/04/23/pizza14429461280-26168c22f83af34d20770970db28bb7b-1200x0.jpg" },
-                    { 6, 6, null, "https://d1725r39asqzt3.cloudfront.net/9858a18d-613d-4d14-ad4d-bc87e000df9e/orig.jpg" },
-                    { 7, 7, null, "https://www.sirpizzatn.com/wp-content/uploads/2017/09/RoyalFeast.jpg" },
-                    { 1, 1, null, "http://st1.foodsd.co.il/Images/Recipes/xxl/Recipe-5968-7g0fXYdnVNi1LZ7N.jpg" },
-                    { 8, 8, null, "https://images.squarespace-cdn.com/content/v1/53816030e4b0135aba1a2100/1454031327479-S1VJTYG878E9W09KM9DM/ke17ZwdGBToddI8pDm48kGdXwE-vebEpgb33VwdtsTxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyFXBTrd8RtdLuD2xTt52BcbibHP9HAWTuiNyjdIhZkDRmM2LuhCrpPu_cqK6msTYI/PizzaHut_TargetMenuBoards_MR-002.jpg" },
-                    { 3, 3, null, "https://www.dominos.com.au/ManagedAssets/AU/product/P005/AU_P005_en_hero_4055.jpg" },
-                    { 9, 9, null, "https://cdn.shopify.com/s/files/1/1335/2603/products/Coca-cola_regular_1024x1024.jpg" }
+                    { 4, "https://www.dominos.com.au/ManagedAssets/AU/product/P356/AU_P356_en_hero_4055.jpg", true, 4 },
+                    { 5, "https://i.insider.com/5cf6d1ef11e2054bb76400b4?width=1100&format=jpeg&auto=webp", true, 5 },
+                    { 2, "https://media.metrolatam.com/2020/04/23/pizza14429461280-26168c22f83af34d20770970db28bb7b-1200x0.jpg", true, 2 },
+                    { 6, "https://d1725r39asqzt3.cloudfront.net/9858a18d-613d-4d14-ad4d-bc87e000df9e/orig.jpg", true, 6 },
+                    { 7, "https://www.sirpizzatn.com/wp-content/uploads/2017/09/RoyalFeast.jpg", true, 7 },
+                    { 1, "http://st1.foodsd.co.il/Images/Recipes/xxl/Recipe-5968-7g0fXYdnVNi1LZ7N.jpg", true, 1 },
+                    { 8, "https://images.squarespace-cdn.com/content/v1/53816030e4b0135aba1a2100/1454031327479-S1VJTYG878E9W09KM9DM/ke17ZwdGBToddI8pDm48kGdXwE-vebEpgb33VwdtsTxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyFXBTrd8RtdLuD2xTt52BcbibHP9HAWTuiNyjdIhZkDRmM2LuhCrpPu_cqK6msTYI/PizzaHut_TargetMenuBoards_MR-002.jpg", true, 8 },
+                    { 3, "https://www.dominos.com.au/ManagedAssets/AU/product/P005/AU_P005_en_hero_4055.jpg", true, 3 },
+                    { 9, "https://cdn.shopify.com/s/files/1/1335/2603/products/Coca-cola_regular_1024x1024.jpg", true, 9 }
                 });
 
             migrationBuilder.CreateIndex(

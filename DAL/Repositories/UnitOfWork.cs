@@ -1,4 +1,5 @@
 ﻿using Common;
+using Common.Interfaces;
 using Infrastructure;
 using System.Threading.Tasks;
 
@@ -14,7 +15,7 @@ namespace DAL.Repositories
         private IRepository<CategoryItems> _catItemsRepo;
         private IRepository<Item> _itemRepo;
         private IRepository<Image> _imageRepo;
-        private IRepository<ImagesItem> _imgItemRpo;
+        private IRepository<IImage> _imgItemRpo;
         private IRepository<Shipping> _shippingRepo;
         private IRepository<Order> _orderRepo;
         private IRepository<BellingAndShippInfo> _bellingAndShippInfoRepo;
@@ -95,12 +96,12 @@ namespace DAL.Repositories
             }
         }
 
-        public IRepository<ImagesItem> ImgItemRpo
+        public IRepository<IImage> ImgItemRpo
         {
             get
             {
                 if (_imgItemRpo == null)
-                    _imgItemRpo = new Repository<ImagesItem>(_appContext);
+                    _imgItemRpo = new Repository<IImage>(_appContext);
 
                 return _imgItemRpo;
             }

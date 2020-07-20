@@ -1,4 +1,5 @@
 ﻿using Common;
+using Common.Interfaces;
 using Infrastructure;
 using System;
 using System.Collections.Generic;

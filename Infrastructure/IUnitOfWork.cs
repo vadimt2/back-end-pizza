@@ -1,4 +1,5 @@
 ﻿using Common;
+using Common.Interfaces;
 using System.Threading.Tasks;
 
 namespace Infrastructure
@@ -17,7 +18,7 @@ namespace Infrastructure
 
         IRepository<Image> ImageRepo { get; }
 
-        IRepository<ImagesItem> ImgItemRpo{ get; }
+        IRepository<IImage> ImgItemRpo{ get; }
 
         IRepository<Shipping> ShippingRepo { get; }
 

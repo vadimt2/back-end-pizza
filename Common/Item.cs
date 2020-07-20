@@ -37,6 +37,7 @@ namespace Common
         [Column(TypeName = "decimal(18,4)")]
         public decimal? Total { get; set; }
 
+
         [ForeignKey("ParentItem")]
         public int? ParentItemId { get; set; }
 

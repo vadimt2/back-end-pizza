@@ -1,6 +1,5 @@
 using AutoMapper;
 using BL;
-using BL.PizzaServices;
 using Common;
 using DAL.Repositories;
 using Infrastructure;
@@ -19,6 +18,8 @@ namespace PizzaWebAPI
 {
     public class Startup
     {
+
+
         public Startup(IConfiguration configuration)
         {
 
@@ -39,13 +40,13 @@ namespace PizzaWebAPI
 
             services.AddTransient<IAuthService, AuthService>();
 
+            services.AddTransient<ITokenService, TokenService>();
+
             services.AddTransient<ICategoryService, CategoryService>();
 
             services.AddTransient<IItemService, ItemService>();
 
             services.AddTransient<ICategoryItemsService, CategoryItemsService>();
-
-            services.AddTransient<IImagesService, ImagesService>();
 
             services.AddTransient<IShippingService, ShippingService>();
 
@@ -66,7 +67,6 @@ namespace PizzaWebAPI
     .AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
-
 
 
 
@@ -95,8 +95,6 @@ namespace PizzaWebAPI
                         ClockSkew = TimeSpan.Zero
                     };
                 });
-
-          
 
 
             services.AddSwaggerGen(gen =>

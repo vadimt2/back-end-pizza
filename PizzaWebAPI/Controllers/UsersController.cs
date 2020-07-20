@@ -24,14 +24,18 @@ namespace PizzaWebAPI.Controllers
     {
         private readonly IAuthService _authService;
 
+        private readonly IUserService _userService;
+
         private readonly ITokenService _tokenService;
 
         private readonly IMapper _mapper;
 
 
-        public UsersController(IAuthService authService, ITokenService tokenService, IMapper mapper)
+        public UsersController(IAuthService authService, ITokenService tokenService, IMapper mapper, IUserService userService)
         {
             _authService = authService;
+
+            _userService = userService;
 
             _tokenService = tokenService;
 
@@ -40,9 +44,9 @@ namespace PizzaWebAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Content("test");
+            return  Ok(await _userService.Get());
         }
 
 
@@ -52,7 +56,7 @@ namespace PizzaWebAPI.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] User login)
         {
-            IActionResult response = Unauthorized();
+            IActionResult response = BadRequest("Email or password is incorrect");
             User user = await _authService.AuthenticateUser(login.Email, login.Password);
 
             var userDTO = _mapper.Map<UserDTO>(user);
@@ -79,6 +83,57 @@ namespace PizzaWebAPI.Controllers
                 return BadRequest();
             else
                 return Ok(user);
+        }
+
+
+        // GET api/<ItemsController>/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var getUser = await _userService.Get(id);
+
+            if (getUser == null)
+                return NotFound("Not Found");
+
+            return Ok(getUser);
+        }
+
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] User user)
+        {
+
+            try
+            {
+                var getUser = await _userService.Update(id, user);
+
+                if (getUser == null)
+                    return NotFound("Not Found");
+
+                return Ok(getUser);
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                var item = await _userService.Delete(id);
+                if (item == 0)
+                    return NotFound("Not Found");
+
+                return Ok("User deleted");
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+
+            }
         }
     }
 }

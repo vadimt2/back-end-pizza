@@ -35,6 +35,13 @@ namespace Common
 
         public Guid ConfirmationNumber { get; set; }
 
+        public string CurrencyString { get; set; }
+
+        public float? CurrencyValue { get; set; }
+
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal ShippingCost { get; set; }
+
         [Column(TypeName = "decimal(18,4)")]
         public decimal Total { get; set; }
 

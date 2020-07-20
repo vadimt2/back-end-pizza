@@ -15,9 +15,12 @@ namespace PizzaWebAPI.Controllers
     public class ImagesController : ControllerBase
     {
         private readonly ImagesService _imagesService;
-        public ImagesController(ImagesService imagesService)
+        private readonly ItemService _itemService;
+
+        public ImagesController(ImagesService imagesService, ItemService itemService)
         {
             _imagesService = imagesService;
+            _itemService = itemService;
         }
 
         //GET: api/<ImagesController>
@@ -44,14 +47,47 @@ namespace PizzaWebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Image image)
         {
+            try {
+                var s = image.ImageData.Trim();
+                var isByteArray = (s.Length % 4 == 0) && Regex.IsMatch(s, @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
+
+
+                if (isByteArray)
+                    image.IsUrl = false;
+                else
+                    image.IsUrl = true;
+
+      
+                var dbImage = await _imagesService.Inseret(image);
+                    return Ok(dbImage);
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
+        }
+
+        [HttpPost("Images")]
+        public async Task<IActionResult> Post([FromBody] ICollection<Image> images)
+        {
             try
             {
-                //if (image.UrlImage == null || image.UploudImage == null)
-                //    return BadRequest("Upload image");
+                foreach (var image in images)
+                {
+                var s = image.ImageData.Trim();
+                var isByteArray = (s.Length % 4 == 0) && Regex.IsMatch(s, @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
+
+                if (isByteArray)
+                    image.IsUrl = false;
+                else
+                    image.IsUrl = true;
+
 
                 var dbImage = await _imagesService.Inseret(image);
-
                 return Ok(dbImage);
+                }
+
+                return BadRequest("");
             }
             catch (Exception exception)
             {
@@ -63,7 +99,7 @@ namespace PizzaWebAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] Image image)
         {
-
+            
             try
             {
                 var getImage = await _imagesService.Update(id, image);
