@@ -103,8 +103,8 @@ namespace DAL
 
             //Shipping Options
             modelBuilder.Entity<Shipping>().HasData(
-            new Shipping { Id = 1, Title = "Delivery", Price = 5, Available = true },
-            new Shipping { Id = 2, Title = "Pickup", Price = 0 , Available = true });
+            new Shipping { Id = 1, Title = "Delivery", Price = 5, Delivery = true },
+            new Shipping { Id = 2, Title = "Pickup", Price = 0 , Delivery = true });
 
         }
     }

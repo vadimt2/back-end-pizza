@@ -80,7 +80,7 @@ namespace PizzaWebAPI.Controllers
             var user = await _authService.Register(register);
 
             if (user == null)
-                return BadRequest();
+                return BadRequest("User already exist");
             else
                 return Ok(user);
         }

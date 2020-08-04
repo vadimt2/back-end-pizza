@@ -20,6 +20,6 @@ namespace Common
         public decimal Price { get; set; }
 
         [Required]
-        public bool Available { get; set; }
+        public bool Delivery { get; set; }
     }
 }

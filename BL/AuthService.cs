@@ -3,6 +3,8 @@ using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace BL
@@ -18,16 +20,15 @@ namespace BL
         {
             try
             {
-                var user = await _unitOfWork.UserRepo.FindAsync(user => user.Email == email && user.IsRegistered);
+                var user = await _unitOfWork.UserRepo.GetAll().Where(user => user.Email == email && user.IsRegistered).Include(b => b.Role).FirstOrDefaultAsync();
+
                 if (user == null || !user.IsRegistered)
                     return null;
 
                 if (!VerifyPassword(password, user.PasswordHash, user.PasswordSalt))
                     return null;
 
-                var userAndRole = await _unitOfWork.UserRepo.GetAllIncluding(role => role.Role).Where(role => role.RoleId == user.RoleId).FirstOrDefaultAsync();
-
-                return userAndRole;
+                return user;
             }
             catch (Exception)
             {
@@ -74,7 +75,10 @@ namespace BL
                 user.PasswordSalt = passwordSalt;
                 user.Password = Convert.ToBase64String(passwordHash);
                 user.IsRegistered = true;
-                user.RoleId = 1;
+                if(user.RoleId != 1)
+                    user.RoleId = 2;
+                else
+                    user.RoleId = 1;
 
                 await _unitOfWork.UserRepo.AddAsyn(user);
 
